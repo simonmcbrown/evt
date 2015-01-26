@@ -1,0 +1,4 @@
+2015.01.20
+	- given the high occurence of 1976 dats in the Cannington daily tmax dataset it would be interesting to see what the impact of Hugo's lag1 time models on return levels
+	- Cannington data is 
+	st1 <- '/net/home/h03/hadsx/extremes/consulting/edf/data/BrymoreCannington_tmax_tmin.csv'
