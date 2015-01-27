@@ -1,0 +1,157 @@
+==8609== Memcheck, a memory error detector
+==8609== Copyright (C) 2002-2010, and GNU GPL'd, by Julian Seward et al.
+==8609== Using Valgrind-3.6.0 and LibVEX; rerun with -h for copyright info
+==8609== Command: /usr/lib64/R/bin/exec/R --no-save
+==8609== Parent PID: 6271
+==8609== 
+--8609-- 
+--8609-- Valgrind options:
+--8609--    --verbose
+--8609--    --tool=memcheck
+--8609--    --leak-check=full
+--8609--    --log-file=d.log
+--8609-- Contents of /proc/version:
+--8609--   Linux version 2.6.32-131.0.15.el6.x86_64 (mockbuild@x86-007.build.bos.redhat.com) (gcc version 4.4.4 20100726 (Red Hat 4.4.4-13) (GCC) ) #1 SMP Tue May 10 15:42:40 EDT 2011
+--8609-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--8609-- Page sizes: currently 4096, max supported 4096
+--8609-- Valgrind library directory: /usr/lib64/valgrind
+--8609-- Reading syms from /usr/lib64/R/bin/exec/R (0x400000)
+--8609-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux (0x38000000)
+--8609--    object doesn't have a dynamic symbol table
+--8609-- Reading syms from /lib64/ld-2.12.so (0x3746000000)
+--8609-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+--8609-- REDIR: 0x37460174f0 (strlen) redirected to 0x38042b17 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--8609-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so (0x4801000)
+--8609-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so (0x4a02000)
+==8609== WARNING: new redirection conflicts with existing -- ignoring it
+--8609--     new: 0x37460174f0 (strlen              ) R-> 0x04a07830 strlen
+--8609-- REDIR: 0x3746017360 (index) redirected to 0x4a07470 (index)
+--8609-- REDIR: 0x37460173e0 (strcmp) redirected to 0x4a07df0 (strcmp)
+--8609-- Reading syms from /usr/lib64/R/lib/libR.so (0x3748000000)
+--8609-- Reading syms from /usr/lib64/R/lib/libRblas.so (0x3747c00000)
+--8609-- Reading syms from /usr/lib64/libgomp.so.1.0.0 (0x3754800000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/libpthread-2.12.so (0x3747400000)
+--8609-- Reading syms from /lib64/libc-2.12.so (0x3746800000)
+--8609-- Reading syms from /usr/lib64/libgfortran.so.3.0.0 (0x3748600000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/libm-2.12.so (0x3746c00000)
+--8609-- Reading syms from /lib64/libreadline.so.6.0 (0x3749400000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/libpcre.so.0.0.1 (0x3760e00000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/libz.so.1.2.3 (0x3746400000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/libdl-2.12.so (0x3747000000)
+--8609-- Reading syms from /usr/lib64/libicuuc.so.42.1 (0x3754000000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /usr/lib64/libicui18n.so.42.1 (0x3754c00000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/librt-2.12.so (0x3747800000)
+--8609-- Reading syms from /lib64/libtinfo.so.5.7 (0x3755c00000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /usr/lib64/libicudata.so.42.1 (0x3758200000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /usr/lib64/libstdc++.so.6.0.13 (0x374d000000)
+--8609--    object doesn't have a symbol table
+--8609-- Reading syms from /lib64/libgcc_s-4.4.5-20110214.so.1 (0x374cc00000)
+--8609--    object doesn't have a symbol table
+--8609-- REDIR: 0x3746883b90 (strcasecmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746885e50 (strncasecmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746881b00 (__GI_strrchr) redirected to 0x4a072f0 (__GI_strrchr)
+--8609-- REDIR: 0x37468800b0 (__GI_strlen) redirected to 0x4a077f0 (__GI_strlen)
+--8609-- REDIR: 0x3746879a70 (malloc) redirected to 0x4a05f10 (malloc)
+--8609-- REDIR: 0x3746880080 (strlen) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746926860 (__strlen_sse42) redirected to 0x4a077d0 (strlen)
+--8609-- REDIR: 0x37468826c0 (memmove) redirected to 0x4a08ed0 (memmove)
+--8609-- REDIR: 0x3746882860 (memset) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x37468828a0 (__GI_memset) redirected to 0x4a08e30 (memset)
+--8609-- REDIR: 0x3746880250 (__GI_strncmp) redirected to 0x4a07cf0 (__GI_strncmp)
+--8609-- REDIR: 0x374687e680 (__GI_strcmp) redirected to 0x4a07da0 (__GI_strcmp)
+--8609-- REDIR: 0x374687a7f0 (free) redirected to 0x4a05890 (free)
+--8609-- REDIR: 0x3746888530 (memcpy) redirected to 0x4a07ec0 (memcpy)
+--8609-- REDIR: 0x374687fad0 (strcpy) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746931720 (???) redirected to 0x4a07850 (strcpy)
+--8609-- REDIR: 0x3746889b20 (strchrnul) redirected to 0x4a08f40 (strchrnul)
+--8609-- REDIR: 0x37468833c0 (mempcpy) redirected to 0x4a08fb0 (mempcpy)
+--8609-- REDIR: 0x3746882210 (memchr) redirected to 0x4a07e90 (memchr)
+--8609-- REDIR: 0x374687e590 (index) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746925910 (__strchr_sse42) redirected to 0x4a07380 (index)
+--8609-- REDIR: 0x3746880170 (strncat) redirected to 0x4a07660 (strncat)
+--8609-- REDIR: 0x3746881aa0 (strncpy) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746932140 (???) redirected to 0x4a079f0 (strncpy)
+--8609-- REDIR: 0x374687e3d0 (strcat) redirected to 0x4a074a0 (strcat)
+--8609-- REDIR: 0x3746835c60 (setenv) redirected to 0x4a092e0 (setenv)
+--8609-- REDIR: 0x374687e5c0 (__GI_strchr) redirected to 0x4a073b0 (__GI_strchr)
+--8609-- REDIR: 0x374687ac70 (realloc) redirected to 0x4a06030 (realloc)
+--8609-- REDIR: 0xffffffffff600000 (???) redirected to 0x38042b03 (vgPlain_amd64_linux_REDIR_FOR_vgettimeofday)
+--8609-- REDIR: 0x37468796b0 (calloc) redirected to 0x4a04900 (calloc)
+--8609-- REDIR: 0x3746880210 (strncmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746926900 (__strncmp_sse42) redirected to 0x4a07c90 (strncmp)
+--8609-- REDIR: 0x374687e640 (strcmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x37469259c0 (__strcmp_sse42) redirected to 0x4a07d50 (strcmp)
+--8609-- REDIR: 0x374692a7a0 (__strncasecmp_sse42) redirected to 0x4a09bb0 (strncasecmp)
+--8609-- REDIR: 0x3746881ad0 (rindex) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746927ac0 (__strrchr_sse42) redirected to 0x4a072c0 (rindex)
+--8609-- REDIR: 0x374687fbe0 (strcspn) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746930d30 (__strcspn_sse42) redirected to 0x4a09270 (strcspn)
+--8609-- REDIR: 0x3746883a40 (__GI_stpcpy) redirected to 0x4a08bc0 (__GI_stpcpy)
+--8609-- Reading syms from /lib64/libnss_centrifydc.so.2 (0x505b000)
+--8609-- Reading syms from /lib64/libresolv-2.12.so (0x5176000)
+--8609-- Reading syms from /lib64/libnsl-2.12.so (0x3755000000)
+--8609-- REDIR: 0x374687fb00 (__GI_strcpy) redirected to 0x4a07920 (__GI_strcpy)
+--8609-- REDIR: 0x3746928b00 (__strcasecmp_sse42) redirected to 0x4a09ce0 (strcasecmp)
+--8609-- REDIR: 0x3746889ad0 (__GI___rawmemchr) redirected to 0x4a08f90 (__GI___rawmemchr)
+--8609-- Reading syms from /lib64/libnss_files-2.12.so (0x5790000)
+--8609-- REDIR: 0x3746882290 (bcmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x374693bd30 (__memcmp_sse4_1) redirected to 0x4a08a50 (bcmp)
+--8609-- Reading syms from /usr/lib64/R/library/methods/libs/methods.so (0x5d9d000)
+--8609-- Reading syms from /usr/lib64/R/library/grDevices/libs/grDevices.so (0x73a4000)
+--8609-- Reading syms from /usr/lib64/R/library/stats/libs/stats.so (0x81c6000)
+--8609-- REDIR: 0x3746883a10 (stpcpy) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x37469330c0 (???) redirected to 0x4a08af0 (stpcpy)
+--8609-- REDIR: 0x374688d5c0 (strstr) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--8609-- REDIR: 0x3746927c60 (__strstr_sse42) redirected to 0x4a09190 (strstr)
+--8609-- Reading syms from /net/home/h03/hadsx/extremes/R/C/C_pp.sl (0x8835000)
+--8609-- REDIR: 0x3746018420 (stpcpy) redirected to 0x4a08d60 (stpcpy)
+--8609-- Discarding syms at 0x8835930-0x8839478 in /net/home/h03/hadsx/extremes/R/C/C_pp.sl due to munmap()
+--8609-- Discarding syms at 0x505e080-0x506e608 in /lib64/libnss_centrifydc.so.2 due to munmap()
+--8609-- Discarding syms at 0x51798c0-0x5188558 in /lib64/libresolv-2.12.so due to munmap()
+--8609-- Discarding syms at 0x3755003ff0-0x3755011788 in /lib64/libnsl-2.12.so due to munmap()
+--8609-- Discarding syms at 0x5792110-0x579a0b8 in /lib64/libnss_files-2.12.so due to munmap()
+==8609== 
+==8609== HEAP SUMMARY:
+==8609==     in use at exit: 22,755,910 bytes in 10,557 blocks
+==8609==   total heap usage: 55,834 allocs, 45,277 frees, 44,752,708 bytes allocated
+==8609== 
+==8609== Searching for pointers to 10,557 not-freed blocks
+==8609== Checked 36,104,784 bytes
+==8609== 
+==8609== 1,379 (40 direct, 1,339 indirect) bytes in 1 blocks are definitely lost in loss record 88 of 1,613
+==8609==    at 0x4A04A28: calloc (vg_replace_malloc.c:467)
+==8609==    by 0x5068A22: ???
+==8609==    by 0x5068B9C: ???
+==8609==    by 0x50649FF: ???
+==8609==    by 0x505E5F2: ???
+==8609==    by 0x506166D: ???
+==8609==    by 0x506174D: ???
+==8609==    by 0x37468AADFC: getpwuid_r@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)
+==8609==    by 0x37468AA6EE: getpwuid (in /lib64/libc-2.12.so)
+==8609==    by 0x3748138C9F: do_fileinfo (platform.c:880)
+==8609==    by 0x374811B2EA: do_internal (names.c:1227)
+==8609==    by 0x37480D4F0A: Rf_eval (eval.c:482)
+==8609== 
+==8609== LEAK SUMMARY:
+==8609==    definitely lost: 40 bytes in 1 blocks
+==8609==    indirectly lost: 1,339 bytes in 39 blocks
+==8609==      possibly lost: 0 bytes in 0 blocks
+==8609==    still reachable: 22,754,531 bytes in 10,517 blocks
+==8609==         suppressed: 0 bytes in 0 blocks
+==8609== Reachable blocks (those to which a pointer was found) are not shown.
+==8609== To see them, rerun with: --leak-check=full --show-reachable=yes
+==8609== 
+==8609== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 18 from 9)
+--8609-- 
+--8609-- used_suppression:     18 dl-hack3-cond-1
+==8609== 
+==8609== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 18 from 9)

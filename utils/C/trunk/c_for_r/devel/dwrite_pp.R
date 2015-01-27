@@ -1,0 +1,74 @@
+#source("dwrite_pp.R")
+
+source("read_pp.R")
+st1 <- "/data/cr1/hadsx/reference/cm3_field_x5.pp"
+st2 <- "/data/cr1/hadsx/reference/test_r_out.pp"
+fname <- st2
+pp1 <- read.pp(st1)
+pp1$data[1:pp1$LBNPT[1], 1:pp1$LBROW[1], pp1$nfields] <-
+												 1:(pp1$LBNPT[1]*pp1$LBROW[1])
+
+dyn.load("/home/hc1400/hadsx/extremes/R/C/C_pp.sl")
+
+o2 <- .C("c_write_pp_file",as.character(fname),
+					as.integer(pp1$nfields),
+					as.integer(pp1$LBYR),
+					as.integer(pp1$LBMON),
+					as.integer(pp1$LBDAT),
+					as.integer(pp1$LBHR),
+					as.integer(pp1$LBMIN),
+					as.integer(pp1$LBDAY),
+					as.integer(pp1$LBYRD),
+					as.integer(pp1$LBMOND),
+					as.integer(pp1$LBDATD),
+					as.integer(pp1$LBHRD),
+					as.integer(pp1$LBMIND),
+					as.integer(pp1$LBDAYD),
+					as.integer(pp1$LBTIM),
+					as.integer(pp1$LBFT),
+					as.integer(pp1$LBLREC),
+					as.integer(pp1$LBCODE),
+					as.integer(pp1$LBHEM),
+					as.integer(pp1$LBROW),
+					as.integer(pp1$LBNPT),
+					as.integer(pp1$LBEXT),
+					as.integer(pp1$LBPACK),
+					as.integer(pp1$LBREL),
+					as.integer(pp1$LBFC),
+					as.integer(pp1$LBCFC),
+					as.integer(pp1$LBPROC),
+					as.integer(pp1$LBVC),
+					as.integer(pp1$LBRVC),
+					as.integer(pp1$LBEXP),
+					as.integer(pp1$LBEGIN),
+					as.integer(pp1$LBNREC),
+					as.integer(pp1$LBPROJ),
+					as.integer(pp1$LBTYP),
+					as.integer(pp1$LBLEV),
+					as.integer(pp1$LBRSVD),
+					as.integer(pp1$LBSRCE),
+					as.integer(pp1$LBUSER),
+					as.single(pp1$BRSVD),
+					as.single(pp1$BDATUM),
+					as.single(pp1$BACC),
+					as.single(pp1$BLEV),
+					as.single(pp1$BRLEV),
+					as.single(pp1$BHLEV),
+					as.single(pp1$BHRLEV),
+					as.single(pp1$BPLAT),
+					as.single(pp1$BPLON),
+					as.single(pp1$BGOR),
+					as.single(pp1$BZY),
+					as.single(pp1$BDY),
+					as.single(pp1$BZX),
+					as.single(pp1$BDX),
+					as.single(pp1$BMDI),
+					as.single(pp1$BMKS),
+					as.single(pp1$data),
+					as.single(pp1$BUF1),
+					as.single(pp1$BUF2),
+					as.single(pp1$BUF3),
+					as.single(pp1$BUF4)
+					)
+
+dyn.unload("/home/hc1400/hadsx/extremes/R/C/C_pp.sl")

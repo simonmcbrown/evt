@@ -1,0 +1,210 @@
+==7153== Memcheck, a memory error detector
+==7153== Copyright (C) 2002-2010, and GNU GPL'd, by Julian Seward et al.
+==7153== Using Valgrind-3.6.0 and LibVEX; rerun with -h for copyright info
+==7153== Command: /usr/lib64/R/bin/exec/R --no-save
+==7153== Parent PID: 5683
+==7153== 
+--7153-- 
+--7153-- Valgrind options:
+--7153--    --verbose
+--7153--    --tool=memcheck
+--7153--    --leak-check=full
+--7153--    --log-file=read_pp.log
+--7153-- Contents of /proc/version:
+--7153--   Linux version 2.6.32-220.17.1.el6.x86_64 (mockbuild@x86-003.build.bos.redhat.com) (gcc version 4.4.6 20110731 (Red Hat 4.4.6-3) (GCC) ) #1 SMP Thu Apr 26 13:37:13 EDT 2012
+--7153-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--7153-- Page sizes: currently 4096, max supported 4096
+--7153-- Valgrind library directory: /usr/lib64/valgrind
+--7153-- Reading syms from /usr/lib64/R/bin/exec/R (0x400000)
+--7153-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux (0x38000000)
+--7153--    object doesn't have a dynamic symbol table
+--7153-- Reading syms from /lib64/ld-2.12.so (0x3631c00000)
+--7153-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+--7153-- REDIR: 0x3631c17460 (strlen) redirected to 0x38042ae7 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--7153-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so (0x4801000)
+--7153-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so (0x4a02000)
+==7153== WARNING: new redirection conflicts with existing -- ignoring it
+--7153--     new: 0x3631c17460 (strlen              ) R-> 0x04a07830 strlen
+--7153-- REDIR: 0x3631c172d0 (index) redirected to 0x4a07470 (index)
+--7153-- REDIR: 0x3631c17350 (strcmp) redirected to 0x4a07df0 (strcmp)
+--7153-- Reading syms from /usr/lib64/R/lib/libR.so (0x3634400000)
+--7153-- Reading syms from /usr/lib64/R/lib/libRblas.so (0x3634000000)
+--7153-- Reading syms from /usr/lib64/libgomp.so.1.0.0 (0x3640800000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/libpthread-2.12.so (0x3633000000)
+--7153-- Reading syms from /lib64/libc-2.12.so (0x3632400000)
+--7153-- Reading syms from /usr/lib64/libgfortran.so.3.0.0 (0x3633c00000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/libm-2.12.so (0x3632800000)
+--7153-- Reading syms from /lib64/libreadline.so.6.0 (0x3633800000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/libpcre.so.0.0.1 (0x364ca00000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/libz.so.1.2.3 (0x3632000000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/libdl-2.12.so (0x3632c00000)
+--7153-- Reading syms from /usr/lib64/libicuuc.so.42.1 (0x3640c00000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /usr/lib64/libicui18n.so.42.1 (0x3640400000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/librt-2.12.so (0x3633400000)
+--7153-- Reading syms from /lib64/libtinfo.so.5.7 (0x3641800000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /usr/lib64/libicudata.so.42.1 (0x3643200000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /usr/lib64/libstdc++.so.6.0.13 (0x3638c00000)
+--7153--    object doesn't have a symbol table
+--7153-- Reading syms from /lib64/libgcc_s-4.4.6-20110824.so.1 (0x3638800000)
+--7153--    object doesn't have a symbol table
+--7153-- REDIR: 0x3632483980 (strcasecmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632485c40 (strncasecmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x36324818f0 (__GI_strrchr) redirected to 0x4a072f0 (__GI_strrchr)
+--7153-- REDIR: 0x363247fe10 (__GI_strlen) redirected to 0x4a077f0 (__GI_strlen)
+--7153-- REDIR: 0x3632479760 (malloc) redirected to 0x4a05f10 (malloc)
+--7153-- REDIR: 0x363247fdd0 (strlen) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x363252ff70 (__strlen_sse42) redirected to 0x4a077d0 (strlen)
+--7153-- REDIR: 0x36324824b0 (memmove) redirected to 0x4a08ed0 (memmove)
+--7153-- REDIR: 0x3632482650 (memset) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632482690 (__GI_memset) redirected to 0x4a08e30 (memset)
+--7153-- REDIR: 0x3632480040 (__GI_strncmp) redirected to 0x4a07cf0 (__GI_strncmp)
+--7153-- REDIR: 0x363247e3d0 (__GI_strcmp) redirected to 0x4a07da0 (__GI_strcmp)
+--7153-- REDIR: 0x363247a590 (free) redirected to 0x4a05890 (free)
+--7153-- REDIR: 0x3632488320 (memcpy) redirected to 0x4a07ec0 (memcpy)
+--7153-- REDIR: 0x363247f820 (strcpy) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632530a00 (???) redirected to 0x4a07850 (strcpy)
+--7153-- REDIR: 0x36324897a0 (strchrnul) redirected to 0x4a08f40 (strchrnul)
+--7153-- REDIR: 0x36324831b0 (mempcpy) redirected to 0x4a08fb0 (mempcpy)
+--7153-- REDIR: 0x3632482000 (memchr) redirected to 0x4a07e90 (memchr)
+--7153-- REDIR: 0x363247e2e0 (index) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632524bf0 (__strchr_sse42) redirected to 0x4a07380 (index)
+--7153-- REDIR: 0x363247ff60 (strncat) redirected to 0x4a07660 (strncat)
+--7153-- REDIR: 0x3632481890 (strncpy) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632531420 (???) redirected to 0x4a079f0 (strncpy)
+--7153-- REDIR: 0x363247e120 (strcat) redirected to 0x4a074a0 (strcat)
+--7153-- REDIR: 0x36324359e0 (setenv) redirected to 0x4a092e0 (setenv)
+--7153-- REDIR: 0x363247e310 (__GI_strchr) redirected to 0x4a073b0 (__GI_strchr)
+--7153-- REDIR: 0x363247aa10 (realloc) redirected to 0x4a06030 (realloc)
+--7153-- REDIR: 0xffffffffff600000 (???) redirected to 0x38042ad3 (vgPlain_amd64_linux_REDIR_FOR_vgettimeofday)
+--7153-- REDIR: 0x36324793b0 (calloc) redirected to 0x4a04900 (calloc)
+--7153-- REDIR: 0x3632480000 (strncmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632525b40 (__strncmp_sse42) redirected to 0x4a07c90 (strncmp)
+--7153-- REDIR: 0x363247e390 (strcmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632524ca0 (__strcmp_sse42) redirected to 0x4a07d50 (strcmp)
+--7153-- REDIR: 0x36325299e0 (__strncasecmp_sse42) redirected to 0x4a09bb0 (strncasecmp)
+--7153-- REDIR: 0x36324818c0 (rindex) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632526d00 (__strrchr_sse42) redirected to 0x4a072c0 (rindex)
+--7153-- REDIR: 0x363247f930 (strcspn) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x3632530010 (__strcspn_sse42) redirected to 0x4a09270 (strcspn)
+--7153-- REDIR: 0x3632483830 (__GI_stpcpy) redirected to 0x4a08bc0 (__GI_stpcpy)
+--7153-- Reading syms from /lib64/libnss_centrifydc.so.2 (0x505d000)
+--7153-- Reading syms from /lib64/libresolv-2.12.so (0x5178000)
+--7153-- Reading syms from /lib64/libnsl-2.12.so (0x5392000)
+--7153-- REDIR: 0x363247f850 (__GI_strcpy) redirected to 0x4a07920 (__GI_strcpy)
+--7153-- REDIR: 0x3632527d40 (__strcasecmp_sse42) redirected to 0x4a09ce0 (strcasecmp)
+--7153-- REDIR: 0x3632489750 (__GI___rawmemchr) redirected to 0x4a08f90 (__GI___rawmemchr)
+--7153-- Reading syms from /lib64/libnss_files-2.12.so (0x59ab000)
+--7153-- REDIR: 0x3632482080 (bcmp) redirected to 0x4801560 (_vgnU_ifunc_wrapper)
+--7153-- REDIR: 0x363253b010 (__memcmp_sse4_1) redirected to 0x4a08a50 (bcmp)
+--7153-- Reading syms from /usr/lib64/R/library/methods/libs/methods.so (0x5fb9000)
+--7153-- Reading syms from /usr/lib64/R/library/grDevices/libs/grDevices.so (0x75c0000)
+--7153-- Reading syms from /usr/lib64/R/library/stats/libs/stats.so (0x83e2000)
+--7153-- Reading syms from /net/home/h03/hadsx/extremes/R/C/C_pp.sl (0x8a51000)
+--7153-- REDIR: 0x3631c18390 (stpcpy) redirected to 0x4a08d60 (stpcpy)
+==7153== Invalid write of size 4
+==7153==    at 0x8A54BC2: c_read_pp_file (C_pp.c:328)
+==7153==    by 0x36344A5A91: do_dotCode (dotcode.c:2200)
+==7153==    by 0x36344D50F2: Rf_eval (eval.c:508)
+==7153==    by 0x36344DB91F: do_set (eval.c:1722)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D71A8: do_begin (eval.c:1420)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D7FF2: Rf_applyClosure (eval.c:838)
+==7153==    by 0x36344D4DE7: Rf_eval (eval.c:526)
+==7153==    by 0x36344DB91F: do_set (eval.c:1722)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x3634509F89: Rf_ReplIteration (main.c:257)
+==7153==  Address 0x8992550 is 0 bytes after a block of size 221,232 alloc'd
+==7153==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==7153==    by 0x363451247F: Rf_allocVector (memory.c:2345)
+==7153==    by 0x3634512BA5: R_alloc (memory.c:1975)
+==7153==    by 0x363449AFFE: RObjToCPtr (dotcode.c:350)
+==7153==    by 0x36344A4574: do_dotCode (dotcode.c:1685)
+==7153==    by 0x36344D50F2: Rf_eval (eval.c:508)
+==7153==    by 0x36344DB91F: do_set (eval.c:1722)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D71A8: do_begin (eval.c:1420)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D7FF2: Rf_applyClosure (eval.c:838)
+==7153==    by 0x36344D4DE7: Rf_eval (eval.c:526)
+==7153== 
+--7153-- Discarding syms at 0x8a51930-0x8a554c8 in /net/home/h03/hadsx/extremes/R/C/C_pp.sl due to munmap()
+--7153-- Reading syms from /net/home/h03/hadsx/extremes/R/C/C_pp.sl (0x8a51000)
+--7153-- Discarding syms at 0x5060080-0x5070608 in /lib64/libnss_centrifydc.so.2 due to munmap()
+--7153-- Discarding syms at 0x517b930-0x518a8d8 in /lib64/libresolv-2.12.so due to munmap()
+--7153-- Discarding syms at 0x5396070-0x53a39f8 in /lib64/libnsl-2.12.so due to munmap()
+--7153-- Discarding syms at 0x59ad1f0-0x59b5648 in /lib64/libnss_files-2.12.so due to munmap()
+==7153== 
+==7153== HEAP SUMMARY:
+==7153==     in use at exit: 27,182,778 bytes in 10,571 blocks
+==7153==   total heap usage: 54,259 allocs, 43,688 frees, 49,154,601 bytes allocated
+==7153== 
+==7153== Searching for pointers to 10,571 not-freed blocks
+==7153== Checked 43,968,560 bytes
+==7153== 
+==7153== 1,379 (40 direct, 1,339 indirect) bytes in 1 blocks are definitely lost in loss record 86 of 1,614
+==7153==    at 0x4A04A28: calloc (vg_replace_malloc.c:467)
+==7153==    by 0x506AA22: ???
+==7153==    by 0x506AB9C: ???
+==7153==    by 0x50669FF: ???
+==7153==    by 0x50605F2: ???
+==7153==    by 0x506366D: ???
+==7153==    by 0x506374D: ???
+==7153==    by 0x36324AA4EC: getpwuid_r@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)
+==7153==    by 0x36324A9DDE: getpwuid (in /lib64/libc-2.12.so)
+==7153==    by 0x3634538C9F: do_fileinfo (platform.c:880)
+==7153==    by 0x363451B2EA: do_internal (names.c:1227)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153== 
+==7153== LEAK SUMMARY:
+==7153==    definitely lost: 40 bytes in 1 blocks
+==7153==    indirectly lost: 1,339 bytes in 39 blocks
+==7153==      possibly lost: 0 bytes in 0 blocks
+==7153==    still reachable: 27,181,399 bytes in 10,531 blocks
+==7153==         suppressed: 0 bytes in 0 blocks
+==7153== Reachable blocks (those to which a pointer was found) are not shown.
+==7153== To see them, rerun with: --leak-check=full --show-reachable=yes
+==7153== 
+==7153== ERROR SUMMARY: 17 errors from 2 contexts (suppressed: 21 from 9)
+==7153== 
+==7153== 16 errors in context 1 of 2:
+==7153== Invalid write of size 4
+==7153==    at 0x8A54BC2: c_read_pp_file (C_pp.c:328)
+==7153==    by 0x36344A5A91: do_dotCode (dotcode.c:2200)
+==7153==    by 0x36344D50F2: Rf_eval (eval.c:508)
+==7153==    by 0x36344DB91F: do_set (eval.c:1722)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D71A8: do_begin (eval.c:1420)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D7FF2: Rf_applyClosure (eval.c:838)
+==7153==    by 0x36344D4DE7: Rf_eval (eval.c:526)
+==7153==    by 0x36344DB91F: do_set (eval.c:1722)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x3634509F89: Rf_ReplIteration (main.c:257)
+==7153==  Address 0x8992550 is 0 bytes after a block of size 221,232 alloc'd
+==7153==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==7153==    by 0x363451247F: Rf_allocVector (memory.c:2345)
+==7153==    by 0x3634512BA5: R_alloc (memory.c:1975)
+==7153==    by 0x363449AFFE: RObjToCPtr (dotcode.c:350)
+==7153==    by 0x36344A4574: do_dotCode (dotcode.c:1685)
+==7153==    by 0x36344D50F2: Rf_eval (eval.c:508)
+==7153==    by 0x36344DB91F: do_set (eval.c:1722)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D71A8: do_begin (eval.c:1420)
+==7153==    by 0x36344D4F0A: Rf_eval (eval.c:482)
+==7153==    by 0x36344D7FF2: Rf_applyClosure (eval.c:838)
+==7153==    by 0x36344D4DE7: Rf_eval (eval.c:526)
+==7153== 
+--7153-- 
+--7153-- used_suppression:     21 dl-hack3-cond-1
+==7153== 
+==7153== ERROR SUMMARY: 17 errors from 2 contexts (suppressed: 21 from 9)
